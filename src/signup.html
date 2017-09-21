@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBbBLIeAP4rc92rser2xu6_6HsA_U0FH7E",
+        authDomain: "dua-app-2f37f.firebaseapp.com",
+        databaseURL: "https://dua-app-2f37f.firebaseio.com",
+        projectId: "dua-app-2f37f",
+        storageBucket: "",
+        messagingSenderId: "954878280874"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <title>Wishify - A Dua App</title>
+  </head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-inverse navbar-toggleable bg-inverse fixed-top">
+        <div class="container">
+
+            <button class="navbar-toggler navbar-toggler-right" data-target="#navbarNav" data-toggle="collapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <a href="#" class="navbar-brand">Wishify<small class="d-none d-sm-inline"> - A social dua application</small></a>
+
+            <div id="navbarNav" class="navbar-collapse collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="home-section">
+            <div class="dark-overlay">
+              <div class="home-inner">
+                <div class="container">
+                  <div class="row justify-content-center">
+        
+                      <div class="col-md-5">
+                          <div class="card card-form card-primary text-center">
+        
+                            <div class="card-block">
+                              <h3>Sign Up</h3>
+                              <p>Please fill in the form to sign up</p>
+        
+
+                                <div class="form-group">
+                                  <input type="text" placeholder="Name" name="name" class="form-control form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                  <input type="email" placeholder="Email" name="email" class="form-control form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                  <input type="text" placeholder="Age" name="age" id="age" class="form-control form-control">
+                                </div>
+                                <div class="form-group">
+                                  <input type="text" placeholder="Contact" name="contact" id="contact" class="form-control form-control">
+                                </div>
+                                <div class="form-group">
+                                  <input type="password" placeholder="Password" name="password" id="password" class="form-control form-control">
+                                </div>
+                                <div class="form-group">
+
+        
+                                <input type="submit" onclick="signup()" value="Sign Up" class="btn btn-outline-secondary btn-block text-white">
+                                <div class="card-footer">
+                                   <a href="index.html" class="text-white"><small>Already signed up? Click here to login.</small></a>
+                                </div>
+
+                            </div>
+                          </div>
+                      </div>
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/userCheckFunction.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+
+</html>
