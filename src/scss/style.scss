@@ -5,21 +5,10 @@ $dark-overlay: rgba(0,0,0,0.7);
 $dua-card-bg: #4f87d6;
 
 body{
-  // background:$bg-color;
   color: $font-color;
   background:url('../img/quran.jpg') no-repeat center top fixed;
   background-size:cover;
   background-attachment:fixed;
-}
-
-.navbar{
-  border-bottom: $primary-color 3px solid;
-  opacity:0.8;
-}
-
-.home-section{
-
-  min-height:800px;
 
   .dark-overlay{
     background-color: $dark-overlay;
@@ -27,21 +16,32 @@ body{
     top:0;
     left:0;
     width:100%;
-    min-height:800px
+    min-height:100%;
   }
+}
+
+
+
+#home-section{
 
   .home-inner{
     padding-top:150px;
   }
-
+  
   .card-form{
     background-color: rgba(2,117,216,0.8);
-
-
+  
+  
   }
-
   
 }
+.navbar{
+  border-bottom: $primary-color 3px solid;
+  opacity:0.8;
+}
+
+
+
 
 @media(max-width:576px){
   nav .container{
