@@ -3,26 +3,24 @@ ifLoggedOut();
 var database = firebase.database().ref();
 var renderDiv = document.getElementById("render-div");
 var userID = window.localStorage.getItem("UID");
-var userInfo;
+var userInfo = JSON.parse(window.localStorage.getItem("User Info"));
 
 
-firebase.database().ref('/user/' + userID).once('value').then(function(snapshot2) {
-    userInfo = snapshot2.val();    
-
-    database.child("duaPosts").on("child_added", function(snapshot){
-        var duaObj = snapshot.val();
-        duaObj.id = snapshot.key;
-        render(duaObj);
-    })
-
-    database.child("comments").on("child_added", function(snapshot){
-        var commentObj = snapshot.val();
-        renderComment(commentObj);
-    })
-    
 
 
-});
+database.child("duaPosts").on("child_added", function(snapshot){
+    var duaObj = snapshot.val();
+    duaObj.id = snapshot.key;
+    render(duaObj);
+})
+
+database.child("comments").on("child_added", function(snapshot){
+    var commentObj = snapshot.val();
+    renderComment(commentObj);
+})
+
+
+
 
 
 
@@ -61,7 +59,7 @@ function render(duaObj){
 
     var duaBy = document.createElement("P");
     duaBy.setAttribute("class", "lead text-right");
-    var duaByText = document.createTextNode("By : " + userInfo.name);
+    var duaByText = document.createTextNode("By : " + duaObj.duaBy);
 
 
     var likes = document.createElement("SMALL");
@@ -126,8 +124,7 @@ function render(duaObj){
     duaCardBlock.appendChild(commentDiv);
 
     firebase.database().ref('/likeStatus/' + userID + "/" + duaObj.id).on('value', function(snapshot) {
-        var obj = snapshot.val();  
-        console.log(obj.likeStatus);      
+        var obj = snapshot.val();    
         if(obj.likeStatus === true){
             likeBtn.setAttribute("class", "d-none");
             unlikeBtn.setAttribute("class", "btn btn-success d-inline-block");

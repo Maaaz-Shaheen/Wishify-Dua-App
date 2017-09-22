@@ -24,6 +24,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 function logOut(){
     firebase.auth().signOut().then(function() {
         window.localStorage.removeItem("UID");
+        window.localStorage.removeItem("User Info");
         location ="index.html";
     })
     .catch(function(error) {
